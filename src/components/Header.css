@@ -1,0 +1,240 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+  z-index: 1000;
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+  border-bottom: none;
+}
+
+.header .logo,
+.header .nav a {
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header.scrolled .logo,
+.header.scrolled .nav a {
+  color: #333;
+  text-shadow: none;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav a {
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #d4a574;
+}
+
+.header .btn-primary {
+  width: fit-content;
+  flex: 0 0 auto;
+  white-space: nowrap;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: none;
+  color: #000000;
+}
+
+.header .btn-primary:hover {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: none;
+  color: #000000;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  transition: all 0.3s;
+}
+
+.header.scrolled .menu-toggle span {
+  background: #333;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 0.3s;
+  }
+
+  .nav.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .nav a {
+    color: #333;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .btn-primary {
+    display: none;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0.75rem 0;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .nav {
+    top: 60px;
+    padding: 1.5rem;
+  }
+
+  .nav a {
+    font-size: 0.95rem;
+  }
+
+  .menu-toggle {
+    padding: 0.25rem;
+  }
+
+  .menu-toggle span {
+    width: 22px;
+    height: 2.5px;
+  }
+}
+
+/* Large screens - 1440px and above */
+@media (min-width: 1440px) {
+  .header {
+    padding: 1.5rem 0;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+  }
+
+  .nav {
+    gap: 2.5rem;
+  }
+
+  .nav a {
+    font-size: 1.1rem;
+  }
+
+  .header .btn-primary {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* Extra large screens - 1920px and above */
+@media (min-width: 1920px) {
+  .header {
+    padding: 2rem 0;
+  }
+
+  .logo {
+    font-size: 2.2rem;
+  }
+
+  .nav {
+    gap: 3rem;
+  }
+
+  .nav a {
+    font-size: 1.3rem;
+  }
+
+  .header .btn-primary {
+    padding: 1.1rem 2.5rem;
+    font-size: 1.2rem;
+  }
+}
+
+/* 4K screens - 2560px and above */
+@media (min-width: 2560px) {
+  .header {
+    padding: 2.5rem 0;
+  }
+
+  .logo {
+    font-size: 2.8rem;
+  }
+
+  .nav {
+    gap: 4rem;
+  }
+
+  .nav a {
+    font-size: 1.6rem;
+  }
+
+  .header .btn-primary {
+    padding: 1.4rem 3rem;
+    font-size: 1.5rem;
+  }
+}

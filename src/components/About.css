@@ -1,0 +1,352 @@
+.about-section {
+  padding: 6rem 0;
+  background: white;
+}
+
+.about-content {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.about-left {
+  flex: 1;
+  text-align: left;
+}
+
+.travel-image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  margin-top: 2rem;
+}
+
+.about-left h2 {
+  font-size: 2.5rem;
+  color: #2c2c2c;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.about-right {
+  flex: 1;
+  position: relative;
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.about-right .trust-badges {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.about-right .badge {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s;
+}
+
+.about-right .badge h3 {
+  font-size: 0.85rem;
+  color: #000000;
+  font-weight: 600;
+  margin-bottom: 0.1rem;
+}
+
+.about-right .badge p {
+  font-size: 0.75rem;
+  color: #000000;
+}
+
+.founder-quote {
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+.founder-quote p {
+  font-size: 1.3rem;
+  color: #666;
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.founder-name {
+  font-size: 1.1rem;
+  color: #d4a574;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.trust-badges {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.badge {
+  background: white;
+  padding: 1.5rem 1rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+}
+
+.badge:hover {
+  transform: translateY(-5px);
+}
+
+.badge-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.badge h3 {
+  font-size: 0.95rem;
+  color: #000000;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.badge p {
+  font-size: 0.85rem;
+  color: #000000;
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 4rem 0;
+  }
+
+  .about-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-left,
+  .about-right {
+    text-align: center;
+  }
+
+  .about-left h2 {
+    font-size: 2rem;
+  }
+
+  .founder-quote {
+    padding: 1.5rem;
+  }
+
+  .founder-quote p {
+    font-size: 1.1rem;
+  }
+
+  .trust-badges {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .about-right .trust-badges {
+    position: static;
+    margin-top: 1rem;
+  }
+
+  .badge {
+    padding: 1rem;
+  }
+
+  .badge h3 {
+    font-size: 0.85rem;
+  }
+
+  .badge p {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 3rem 0;
+  }
+
+  .about-left h2 {
+    font-size: 1.75rem;
+  }
+
+  .founder-quote {
+    padding: 1.25rem;
+  }
+
+  .founder-quote p {
+    font-size: 1rem;
+  }
+
+  .founder-name {
+    font-size: 1rem;
+  }
+
+  .badge {
+    padding: 0.75rem;
+  }
+
+  .badge h3 {
+    font-size: 0.8rem;
+  }
+
+  .badge p {
+    font-size: 0.7rem;
+  }
+
+  .badge-icon {
+    font-size: 1.5rem;
+  }
+}
+
+/* Large screens - 1440px and above */
+@media (min-width: 1440px) {
+  .about-section {
+    padding: 8rem 0;
+  }
+
+  .about-content {
+    gap: 5rem;
+  }
+
+  .about-left h2 {
+    font-size: 3rem;
+  }
+
+  .founder-quote {
+    padding: 2.5rem;
+  }
+
+  .founder-quote p {
+    font-size: 1.5rem;
+  }
+
+  .founder-name {
+    font-size: 1.3rem;
+  }
+
+  .badge {
+    padding: 2rem 1.5rem;
+  }
+
+  .badge h3 {
+    font-size: 1.1rem;
+  }
+
+  .badge p {
+    font-size: 1rem;
+  }
+
+  .badge-icon {
+    font-size: 2.5rem;
+  }
+}
+
+/* Extra large screens - 1920px and above */
+@media (min-width: 1920px) {
+  .about-section {
+    padding: 10rem 0;
+  }
+
+  .about-content {
+    gap: 6rem;
+  }
+
+  .about-left h2 {
+    font-size: 3.5rem;
+  }
+
+  .founder-quote {
+    padding: 3rem;
+  }
+
+  .founder-quote p {
+    font-size: 1.8rem;
+    line-height: 2;
+  }
+
+  .founder-name {
+    font-size: 1.5rem;
+  }
+
+  .badge {
+    padding: 2.5rem 2rem;
+  }
+
+  .badge h3 {
+    font-size: 1.3rem;
+  }
+
+  .badge p {
+    font-size: 1.1rem;
+  }
+
+  .badge-icon {
+    font-size: 3rem;
+  }
+}
+
+/* 4K screens - 2560px and above */
+@media (min-width: 2560px) {
+  .about-section {
+    padding: 12rem 0;
+  }
+
+  .about-content {
+    gap: 8rem;
+  }
+
+  .about-left h2 {
+    font-size: 4.5rem;
+  }
+
+  .founder-quote {
+    padding: 4rem;
+  }
+
+  .founder-quote p {
+    font-size: 2.2rem;
+    line-height: 2.2;
+  }
+
+  .founder-name {
+    font-size: 1.8rem;
+  }
+
+  .badge {
+    padding: 3rem 2.5rem;
+  }
+
+  .badge h3 {
+    font-size: 1.6rem;
+  }
+
+  .badge p {
+    font-size: 1.4rem;
+  }
+
+  .badge-icon {
+    font-size: 3.5rem;
+  }
+}
