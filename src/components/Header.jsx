@@ -26,7 +26,7 @@ const Header = () => {
         <div className="header-content">
           <Link to="/" className="logo" onClick={closeMenu}>Marwa Travel</Link>
 
-          <nav className={`nav ${isMenuOpen ? 'active' : ''}`}>
+          <nav id="site-navigation" className={`nav ${isMenuOpen ? 'active' : ''}`}>
             <a href="/#tours" onClick={closeMenu}>Tours</a>
             <a href="/#about" onClick={closeMenu}>About</a>
             <a href="/#blog" onClick={closeMenu}>Blog</a>
@@ -37,8 +37,12 @@ const Header = () => {
           <Link to="/contact" className="btn-primary" onClick={closeMenu}>Contact</Link>
 
           <button
+            type="button"
             className="menu-toggle"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={isMenuOpen}
+            aria-controls="site-navigation"
+            onClick={() => setIsMenuOpen((open) => !open)}
           >
             <span></span>
             <span></span>

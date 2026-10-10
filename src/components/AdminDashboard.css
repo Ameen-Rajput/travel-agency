@@ -40,12 +40,12 @@
 .btn-logout:hover, .btn-secondary:hover, .btn-edit:hover { color: white; background: var(--admin-ink); }
 .btn-logout:active, .btn-primary:active, .btn-secondary:active, .btn-edit:active, .btn-delete:active { transform: scale(0.98); }
 
-.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 28px 0; align-items: stretch; }
-.stat-card { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; padding: 8px 12px 8px 0; background: transparent; border: 0; border-radius: 0; }
-.stat-card { min-height: 0; }
-.stat-kicker { color: var(--admin-accent); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; }
-.stat-details h3 { margin: -5px 0 5px; font-family: Georgia, serif; font-size: clamp(1.65rem, 3vw, 2.5rem); font-weight: 500; line-height: 1; }
-.stat-details p { margin: 0; color: var(--admin-muted); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.admin-dashboard .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 28px 0; align-items: stretch; }
+.admin-dashboard .stat-card { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; padding: 8px 12px 8px 0; background: transparent; border: 0; border-radius: 0; }
+.admin-dashboard .stat-card { min-height: 0; }
+.admin-dashboard .stat-kicker { color: var(--admin-accent); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; }
+.admin-dashboard .stat-details h3 { margin: -5px 0 5px; font-family: Georgia, serif; font-size: clamp(1.65rem, 3vw, 2.5rem); font-weight: 500; line-height: 1; }
+.admin-dashboard .stat-details p { margin: 0; color: var(--admin-muted); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
 
 .tabs-nav { display: none; }
 .tab-btn { flex: 1; padding: 13px 16px; color: var(--admin-muted); background: transparent; border: 0; border-radius: 4px; cursor: pointer; font: inherit; font-size: 0.88rem; font-weight: 700; transition: background 180ms ease, color 180ms ease; }
@@ -91,5 +91,525 @@
 .management-grid { display: grid; grid-template-columns: minmax(260px, 0.75fr) minmax(0, 1.25fr); gap: 32px; }.form-section, .tours-list-section { min-width: 0; }.tour-form { display: flex; flex-direction: column; gap: 17px; margin-top: 24px; }.form-group { display: flex; flex-direction: column; gap: 7px; }.form-group label { font-size: 0.78rem; font-weight: 800; }.form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px; color: var(--admin-ink); background: #fbfcfa; border: 1px solid var(--admin-line); border-radius: 4px; font: inherit; font-size: 0.88rem; }.form-group textarea { resize: vertical; }.form-group input:focus, .form-group textarea:focus { outline: 2px solid var(--admin-accent-soft); border-color: var(--admin-accent); }.form-actions { display: flex; gap: 8px; margin-top: 5px; }.btn-primary, .btn-secondary { flex: 1; padding: 12px 16px; border-radius: 4px; font-size: 0.82rem; font-weight: 800; }.btn-primary { color: white; background: var(--admin-accent); }.btn-primary:hover { background: #b94f2d; }.btn-secondary { color: var(--admin-ink); background: white; border: 1px solid var(--admin-line); }
 .tours-list { display: flex; flex-direction: column; gap: 12px; max-height: 650px; margin-top: 24px; overflow-y: auto; }.tour-item { display: grid; grid-template-columns: 100px minmax(0, 1fr) auto; gap: 15px; align-items: center; padding: 12px; border: 1px solid var(--admin-line); border-radius: 5px; }.tour-item img { width: 100px; height: 78px; object-fit: cover; border-radius: 3px; }.tour-info h3 { margin: 0 0 5px; font-family: Georgia, serif; font-size: 1.15rem; font-weight: 500; }.tour-info p { display: -webkit-box; margin: 0 0 7px; overflow: hidden; color: var(--admin-muted); font-size: 0.78rem; line-height: 1.4; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }.tour-price { color: var(--admin-green); font-size: 0.82rem; font-weight: 800; }.tour-actions { display: flex; flex-direction: column; gap: 6px; }.btn-edit, .btn-delete { padding: 8px 10px; border-radius: 3px; font-size: 0.72rem; font-weight: 800; }.btn-edit { color: var(--admin-ink); background: #e8ede8; }.btn-delete { color: #ad4a36; background: var(--admin-accent-soft); }.btn-delete:hover { color: white; background: #ad4a36; }.no-data-card, .no-tours { padding: 30px 0; color: var(--admin-muted); text-align: center; }
 
-@media (max-width: 900px) { .admin-dashboard { grid-template-columns: 170px minmax(0, 1fr); gap: 20px; }.admin-sidebar { min-height: calc(100dvh - 70px); padding: 0; }.admin-brand { margin-bottom: 38px; }.sidebar-nav { flex-direction: column; flex-wrap: nowrap; }.sidebar-link { flex: none; }.sidebar-footer { display: flex; }.stats-grid { grid-template-columns: repeat(2, 1fr); }.overview-grid, .management-grid { grid-template-columns: 1fr; } }
-@media (max-width: 600px) { .admin-dashboard { grid-template-columns: 112px minmax(0, 1fr); gap: 12px; padding: 18px 10px 40px; }.admin-sidebar { min-height: calc(100dvh - 58px); }.admin-brand { align-items: flex-start; gap: 6px; margin-bottom: 28px; font-size: 0.8rem; line-height: 1.2; }.brand-mark { flex: 0 0 24px; width: 24px; height: 24px; }.sidebar-link { gap: 6px; padding: 10px 5px; font-size: 0.68rem; }.sidebar-index { width: 15px; font-size: 0.58rem; }.sidebar-footer { display: none; }.admin-header { align-items: flex-start; padding-bottom: 22px; }.admin-header h1 { font-size: 2rem; }.btn-logout { flex-shrink: 0; padding: 9px 10px; font-size: 0.72rem; }.stats-grid { grid-template-columns: 1fr; gap: 8px; padding: 18px 0; }.stat-card { min-height: 0; gap: 10px; padding: 8px 0; }.stat-details h3 { font-size: 1.55rem; }.stat-details p { font-size: 0.62rem; }.tab-content { padding: 17px 13px; }.overview-card { padding: 16px; }.activity-item { grid-template-columns: 1fr; gap: 4px; }.activity-date { font-size: 0.7rem; }.section-header { display: block; }.section-subtitle { margin-top: 6px; }.today-stats { gap: 7px; }.travel-chart, .metric-share { padding: 16px 12px; }.chart-header { align-items: flex-start; flex-direction: column; gap: 8px; }.chart-header h3 { font-size: 1.15rem; }.chart-area { height: 180px; gap: 6px; }.tour-item { grid-template-columns: 74px minmax(0, 1fr); }.tour-item img { width: 74px; height: 74px; }.tour-actions { grid-column: 1 / -1; flex-direction: row; }.tour-actions button { flex: 1; }.form-actions { flex-direction: column; } }
+/* Dashboard visual system */
+.admin-dashboard {
+  grid-template-columns: 232px minmax(0, 1fr);
+  gap: clamp(24px, 3vw, 48px);
+  padding: 28px clamp(18px, 3vw, 48px) 56px;
+  font-family: 'Aptos', 'Segoe UI', sans-serif;
+}
+
+.admin-sidebar {
+  position: sticky;
+  top: 24px;
+  align-self: start;
+  height: calc(100dvh - 48px);
+  min-height: 540px;
+  padding: 24px 16px;
+  color: #f7f9f7;
+  background: var(--admin-ink);
+  border-radius: 8px;
+}
+
+.admin-brand {
+  gap: 11px;
+  margin-bottom: 48px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  background: var(--admin-accent);
+  border-radius: 7px;
+}
+
+.admin-sidebar .sidebar-label {
+  color: #aebbb4;
+}
+
+.sidebar-nav {
+  gap: 7px;
+}
+
+.sidebar-link {
+  min-height: 42px;
+  padding: 10px 11px;
+  color: #c6d0ca;
+  border-radius: 5px;
+}
+
+.sidebar-link:hover {
+  color: white;
+  background: #263a32;
+}
+
+.sidebar-link.active {
+  color: var(--admin-ink);
+  background: #f4f6f2;
+}
+
+.sidebar-link.active .sidebar-index {
+  color: var(--admin-accent);
+}
+
+.sidebar-footer {
+  border-color: #35483f;
+}
+
+.sidebar-logout {
+  color: #f2a184;
+}
+
+.admin-header {
+  align-items: center;
+  padding: 8px 0 26px;
+}
+
+.admin-header h1,
+.overview-card h3,
+.section-header h2,
+.form-section h2,
+.tours-list-section h2,
+.chart-header h3,
+.today-number,
+.stat-details h3,
+.tour-info h3 {
+  font-family: inherit;
+}
+
+.admin-header h1 {
+  font-size: clamp(1.9rem, 3vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.eyebrow {
+  letter-spacing: 0.08em;
+}
+
+.btn-logout {
+  border-radius: 5px;
+}
+
+.btn-logout:hover,
+.btn-secondary:hover,
+.btn-edit:hover {
+  color: white;
+  background: var(--admin-ink);
+}
+
+.admin-dashboard .stats-grid {
+  gap: 12px;
+  padding: 22px 0;
+}
+
+.admin-dashboard .stat-card {
+  min-height: 104px;
+  gap: 14px;
+  padding: 17px 14px;
+  background: white;
+  border: 1px solid var(--admin-line);
+  border-top: 3px solid var(--admin-accent);
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(20, 37, 31, 0.035);
+}
+
+.admin-dashboard .stat-card:nth-child(2) { border-top-color: #66866f; }
+.admin-dashboard .stat-card:nth-child(3) { border-top-color: #8094a1; }
+.admin-dashboard .stat-card:nth-child(4) { border-top-color: #c89b3c; }
+
+.admin-dashboard .stat-details h3 {
+  margin: 0 0 6px;
+  color: var(--admin-ink);
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  font-weight: 700;
+}
+
+.admin-dashboard .stat-details p {
+  color: var(--admin-muted);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.tab-content {
+  min-height: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+
+.overview-grid {
+  grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.2fr);
+  gap: 14px;
+}
+
+.overview-card,
+.travel-chart,
+.metric-share,
+.review-card,
+.form-section,
+.tours-list-section {
+  background: white;
+  border: 1px solid var(--admin-line);
+  border-radius: 7px;
+}
+
+.overview-card,
+.travel-chart,
+.metric-share {
+  padding: 22px;
+}
+
+.overview-card h3,
+.chart-header h3,
+.section-header h2,
+.form-section h2,
+.tours-list-section h2 {
+  font-size: 1.12rem;
+  font-weight: 700;
+}
+
+.today-stat-item {
+  border-top-width: 3px;
+  background: #f7f9f6;
+}
+
+.today-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.activity-item:last-child {
+  border-bottom: 0;
+}
+
+.travel-chart,
+.metric-share {
+  margin-top: 14px;
+}
+
+.chart-track,
+.metric-share-track {
+  border-radius: 4px;
+}
+
+.bookings-table-wrapper {
+  border: 1px solid var(--admin-line);
+  border-radius: 6px;
+}
+
+.bookings-table th {
+  background: #f5f7f4;
+}
+
+.bookings-table tbody tr:hover {
+  background: #f8faf7;
+}
+
+.review-card {
+  padding: 20px;
+}
+
+.form-section,
+.tours-list-section {
+  padding: 22px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  border-radius: 5px;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-edit,
+.btn-delete {
+  border-radius: 5px;
+}
+
+.tour-item {
+  border-radius: 6px;
+}
+
+.tour-item img {
+  border-radius: 4px;
+}
+
+.no-data-card,
+.no-tours {
+  padding: 36px 18px;
+  background: #f7f9f6;
+  border: 1px dashed #cbd5ce;
+  border-radius: 6px;
+}
+
+@media (max-width: 900px) {
+  .admin-dashboard {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    padding: 0 24px 44px;
+  }
+
+  .admin-sidebar {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 18px;
+    width: calc(100% + 48px);
+    height: auto;
+    min-height: 0;
+    margin: 0 -24px 22px;
+    padding: 12px 24px;
+    border-radius: 0;
+  }
+
+  .admin-brand {
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .admin-sidebar > .sidebar-label,
+  .sidebar-footer .sidebar-label {
+    display: none;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 4px;
+    min-width: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .sidebar-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sidebar-link {
+    flex: 0 0 auto;
+    min-height: 38px;
+    padding: 8px 10px;
+    font-size: 0.76rem;
+    white-space: nowrap;
+  }
+
+  .sidebar-index {
+    display: none;
+  }
+
+  .sidebar-footer {
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .sidebar-footer strong {
+    display: none;
+  }
+
+  .sidebar-logout {
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .overview-grid,
+  .management-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-dashboard {
+    gap: 0;
+    padding: 0 14px 32px;
+  }
+
+  .admin-sidebar {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px;
+    width: calc(100% + 28px);
+    margin: 0 -14px 18px;
+    padding: 11px 14px 8px;
+  }
+
+  .admin-brand {
+    gap: 8px;
+    font-size: 0.9rem;
+  }
+
+  .brand-mark {
+    flex: 0 0 30px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .sidebar-nav {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .sidebar-link {
+    min-height: 36px;
+    padding: 7px 10px;
+    font-size: 0.72rem;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  .admin-header {
+    align-items: center;
+    gap: 10px;
+    padding: 4px 0 18px;
+  }
+
+  .admin-header .eyebrow {
+    margin-bottom: 8px;
+    font-size: 0.58rem;
+  }
+
+  .admin-header h1 {
+    margin-bottom: 5px;
+    font-size: 1.65rem;
+  }
+
+  .dashboard-subtitle {
+    max-width: 24ch;
+    font-size: 0.8rem;
+  }
+
+  .btn-logout {
+    padding: 8px 10px;
+    font-size: 0.72rem;
+  }
+
+  .admin-dashboard .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    padding: 16px 0 18px;
+  }
+
+  .admin-dashboard .stat-card {
+    min-height: 84px;
+    gap: 8px;
+    padding: 12px 10px;
+  }
+
+  .admin-dashboard .stat-kicker {
+    font-size: 0.65rem;
+  }
+
+  .admin-dashboard .stat-details h3 {
+    font-size: 1.35rem;
+  }
+
+  .admin-dashboard .stat-details p {
+    font-size: 0.68rem;
+  }
+
+  .overview-grid {
+    gap: 10px;
+  }
+
+  .overview-card,
+  .travel-chart,
+  .metric-share,
+  .form-section,
+  .tours-list-section {
+    padding: 16px;
+  }
+
+  .today-stats {
+    gap: 7px;
+    margin-top: 16px;
+  }
+
+  .today-stat-item {
+    padding: 14px 10px;
+  }
+
+  .activity-item {
+    grid-template-columns: 1fr auto;
+    gap: 4px 10px;
+  }
+
+  .activity-icon {
+    grid-column: 1 / -1;
+  }
+
+  .activity-details {
+    min-width: 0;
+  }
+
+  .activity-title {
+    overflow-wrap: anywhere;
+  }
+
+  .activity-date {
+    align-self: end;
+    font-size: 0.68rem;
+  }
+
+  .section-header {
+    display: block;
+  }
+
+  .section-subtitle {
+    margin-top: 6px;
+  }
+
+  .chart-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .chart-header h3 {
+    font-size: 1rem;
+  }
+
+  .chart-area {
+    height: 160px;
+    gap: 6px;
+  }
+
+  .chart-month,
+  .chart-value {
+    font-size: 0.66rem;
+  }
+
+  .tour-item {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .tour-item img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .tour-actions {
+    grid-column: 1 / -1;
+    flex-direction: row;
+  }
+
+  .tour-actions button {
+    flex: 1;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+}
